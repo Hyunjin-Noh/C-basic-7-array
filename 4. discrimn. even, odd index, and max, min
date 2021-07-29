@@ -1,0 +1,50 @@
+/*10개의 정수를 입력 받고, 짝수 번째에 입력된 정수들 중 최댓값과 최솟값을
+출력하는 프로그램을 작성하시오.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int a[10];
+    int evenin[5];//짝수번째입력수 배열을 아예 따로 선언하였음.
+    int max;
+    int min;
+    
+    for(int i=0;i<10;i++) {
+        scanf("%d", &a[i]);
+        if(i%2!=0) evenin[(i-1)/2]=a[i];//짝수번째입력수 배열 초기화
+    }
+    printf("짝수 번째에 입력된 값 :");  
+    for(int i=0;i<5;i++){
+        if (i==0) { 
+          max=evenin[i];
+          min=evenin[i]; }
+        else if(max<evenin[i]) max=evenin[i];
+        else if(min>evenin[i]) min=evenin[i];
+        printf(" %d", evenin[i]);
+    }
+    printf("\n최댓값 : %d\n", max);
+    printf("최솟값 : %d\n", min);
+}
+
+/*#include <stdio.h>
+
+int main()
+{
+    int a[10];
+    int i;
+    int max;
+    int min;
+    for(i=0;i<10;i++) {
+        scanf("%d", &a[i]);
+    }
+    for(i=0;i<10;i++){
+        if (i==1) {
+            max=a[i];
+            min=a[i];
+        }
+        else if (i%2!=0) {
+            if (max<a[i]) max=a[i];
+            if (min>a[i]) min=a[i];
+        }
+    }
