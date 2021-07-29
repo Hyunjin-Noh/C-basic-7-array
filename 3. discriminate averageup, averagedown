@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    int i;
+    int a[10];
+    int sum=0;
+    int average;
+    int upstudent=0, downstudent=0;
+    
+    for(i=0;i<10;i++) {
+        scanf("%d", &a[i]);
+        sum+=a[i];
+    }
+    average=sum/10;
+    printf("총점 : %d\n", sum);
+    printf("평균 : %d\n", average);
+    
+    for(i=0;i<10;i++) {
+        if(a[i]>=average) upstudent++;
+        else downstudent++;
+    }
+    printf("평균 이상인 학생 수 : %d\n", upstudent);
+    printf("평균 미만인 학생 수 : %d\n", downstudent);
+}
