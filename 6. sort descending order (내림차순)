@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    int a[10];
+    int i, maxindex, j;
+    int tmp;
+    for(i=0;i<10;i++){
+        scanf("%d", &a[i]);
+    }
+    for(i=0;i<9;i++){
+        maxindex=i;
+        for(j=i+1;j<10;j++){
+            if(a[j]>a[maxindex]) maxindex=j;
+        }
+        tmp=a[i];
+        a[i]=a[maxindex];
+        a[maxindex]=tmp;
+    }
+    for(i=0;i<10;i++){
+        printf("%d ", a[i]);
+    }
+    return 0;
+}//부가 내용 노트필기 해놓음.
